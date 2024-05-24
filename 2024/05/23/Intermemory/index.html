@@ -15,7 +15,7 @@
 
 
 
-<title>Hello World | 麻辣芝麻牛肉</title>
+<title>一个装X名词&#34;低位交叉编址二体存储器&#34; | 麻辣芝麻牛肉</title>
 
 
 
@@ -154,7 +154,7 @@
         </h2>
       </a>
       <div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-        Hello World
+        一个装X名词"低位交叉编址二体存储器"
       </div>
       <div class="flex-1"></div>
       <div class="flex items-center gap-3">
@@ -218,23 +218,23 @@
   <header class="overflow-hidden pt-6 pb-6 md:pt-12">
     <div class="pt-4 md:pt-6">
       <h1 id="article-title" class="text-[2rem] font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">
-        Hello World
+        一个装X名词"低位交叉编址二体存储器"
       </h1>
       <div>
         <section class="flex items-center gap-3 text-sm">
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time>2024-05-22</time>
+            <time>2024-05-24</time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="ic:round-access-alarm" ></iconify-icon>
-            <span>1 min</span>
+            <span>3 min</span>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>75 words</span>
+            <span>971 words</span>
           </span>
           
         </section>
@@ -243,19 +243,26 @@
   </header>
   <!-- content -->
   <article class="post-content prose m-auto slide-enter-content dark:prose-invert">
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <p>为什么说是装X的名词，因为还有个俗称————双通道<br>（初次听见的时候确实被别人装到了）<br>既然如此，来了解了解吧</p>
+<h3 id="存取周期"><a href="#存取周期" class="headerlink" title="存取周期"></a>存取周期</h3><p> <strong>存取周期</strong>：可以连续读&#x2F;写的最短时间间隔</p>
+<p> 注意：DRAM芯片的恢复时间比较长，有可能是存取时间的几倍<br> eg：存取时间为r，存取周期为T，T&#x3D;4r</p>
+<p>我们知道就算是单核CPU的读取速度也要比内存快的多，并且内存读写后需要一段恢复时间。当CPU想要连续读取一些数据时，就必须等待恢复时间</p>
+<p>为了解决这个问题，于是便提出了多体并行存储器</p>
+<h2 id="多模块存储器"><a href="#多模块存储器" class="headerlink" title="多模块存储器"></a>多模块存储器</h2><p>多模块存储器是一种空间并行技术，利用多个结构完全相同的存储模块的并行工作来提高存储器的吞吐率，常有单体多字存储器和多体并行存储器</p>
+<h3 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h3><p> 多体并行存储器由多体模块构成，每个模块都有相同的容量和存取速度，各个模块都有独立的读写控制电路，地址存器和数据寄存器。它们既能并行工作，又能交叉工作</p>
+<p> 分为<strong>高位</strong>交叉编址和<strong>低位</strong>交叉编址两种</p>
+<p>CPU对内存访问时，一定需要提供内存的地址，内存地址又是几个比特位信息</p>
+<p>对于高位交叉编址：我们可以采用地址位更高的几个位来区分是哪个内存条</p>
+<p>对于低位交叉编址：我们可以采用地址位更低的几个位来区分是哪个内存条</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><h5 id="1-对于以下内容的存储周期都假设为T，存取时间为r，假设T-4r（恢复时间为3r）"><a href="#1-对于以下内容的存储周期都假设为T，存取时间为r，假设T-4r（恢复时间为3r）" class="headerlink" title="1.对于以下内容的存储周期都假设为T，存取时间为r，假设T&#x3D;4r（恢复时间为3r）"></a>1.对于以下内容的存储周期都假设为T，存取时间为r，假设T&#x3D;4r（恢复时间为3r）</h5><h5 id="2-设都具有4个存储体，每个存储体有8个存储单元"><a href="#2-设都具有4个存储体，每个存储体有8个存储单元" class="headerlink" title="2.设都具有4个存储体，每个存储体有8个存储单元"></a>2.设都具有4个存储体，每个存储体有8个存储单元</h5><h5 id="3-都假设直接访问”00000”-“000001”-“00010”-“00011”-“00100”-4-8-32-2-5-5个比特位"><a href="#3-都假设直接访问”00000”-“000001”-“00010”-“00011”-“00100”-4-8-32-2-5-5个比特位" class="headerlink" title="3.都假设直接访问”00000” “000001” “00010” “00011” “00100” (4*8&#x3D;32&#x3D;2^5) (5个比特位)"></a>3.都假设直接访问”00000” “000001” “00010” “00011” “00100” (4*8&#x3D;32&#x3D;2^5) (5个比特位)</h5><h4 id="高位交叉编址"><a href="#高位交叉编址" class="headerlink" title="高位交叉编址"></a>高位交叉编址</h4><p> 高位地址表示体号，低位地址表示体内地址。如下图，存储器共有4个模块M0~M3，每个模块（存储体）有8个存储单元</p>
+<p><img src="/./image/GWT1.jpg" alt="Alternate text"><br>在高位交叉方式下，总是把低位的体内地址送到高位体号确定的模块内进行译码。访问一个连续主存时，总是先在一个模块内访问，等到该模块访问完才会转到下一个模块访问<br>CPU总是按顺序访问存储模块，各模块不能并行访问，因此不能提高存储器的吞吐率（相当于单纯的扩容）</p>
+<p><img src="/./image/GWT2.jpg" alt="Alternate text"><br>连续取5个存储字，耗时5T<br>若连续取n个存储字，耗时nT</p>
+<h4 id="低位交叉编址"><a href="#低位交叉编址" class="headerlink" title="低位交叉编址"></a>低位交叉编址</h4><p> 低位地址表示体号，高位地址表示体内地址。如下图，存储器共有4个模块M0~M3，每个模块（存储体）有8个存储单元</p>
+<p><img src="/./image/DWT1.jpg" alt="Alternate text"><br>在低位交叉方式下，总是把高位的体内地址送到低位体号确定的模块内进行译码，程序连续存放在相邻模块中</p>
+<p><img src="/./image/DWT2.jpg" alt="Alternate text"><br>连续取5个存储字，耗时T+4r<br>若连续取n个存储字，耗时T+(n-1)r</p>
+<h4 id="思考：为什么讨论的是”连续访存”的情况"><a href="#思考：为什么讨论的是”连续访存”的情况" class="headerlink" title="思考：为什么讨论的是”连续访存”的情况"></a>思考：为什么讨论的是”连续访存”的情况</h4><p>因为：在实际的应用中，很多数据都是连续存放的。eg：数组，程序代码的顺序执行(除非含有if等跳转语句)等</p>
+<h3 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h3><p>每个存储单元存储m个字，总线宽度也为m个字，一次并行读出m个字</p>
+<p><img src="/./image/DT.jpg" alt="Alternate text"><br>但是每次只能同时取m个字，不能单独取其中某个字，指令和数据在主存中必须是连续存放的</p>
 
   </article>
   <!-- tag -->
@@ -266,13 +273,13 @@
   <div class="flex justify-between mt-12 pt-6 border-t border-gray-200">
     <div>
       
-        <a href="/2024/05/23/Intermemory/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
-          <iconify-icon width="20" icon="ri:arrow-left-s-line" data-inline="false"></iconify-icon>
-          一个装X名词"低位交叉编址二体存储器"
-        </a>
-      
     </div>
     <div>
+      
+        <a href="/2024/05/22/hello-world/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
+          Hello World
+          <iconify-icon width="20" icon="ri:arrow-right-s-line" data-inline="false"></iconify-icon>
+        </a>
       
     </div>
   </div>
