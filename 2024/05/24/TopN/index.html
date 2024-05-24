@@ -15,7 +15,7 @@
 
 
 
-<title>一个装X名词&#34;低位交叉编址二体存储器&#34; | 麻辣芝麻牛肉</title>
+<title>TopN问题 | 麻辣芝麻牛肉</title>
 
 
 
@@ -154,7 +154,7 @@
         </h2>
       </a>
       <div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-        一个装X名词"低位交叉编址二体存储器"
+        TopN问题
       </div>
       <div class="flex-1"></div>
       <div class="flex items-center gap-3">
@@ -218,7 +218,7 @@
   <header class="overflow-hidden pt-6 pb-6 md:pt-12">
     <div class="pt-4 md:pt-6">
       <h1 id="article-title" class="text-[2rem] font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">
-        一个装X名词"低位交叉编址二体存储器"
+        TopN问题
       </h1>
       <div>
         <section class="flex items-center gap-3 text-sm">
@@ -229,12 +229,12 @@
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="ic:round-access-alarm" ></iconify-icon>
-            <span>3 min</span>
+            <span>5 min</span>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>964 words</span>
+            <span>1.4k words</span>
           </span>
           
         </section>
@@ -243,26 +243,25 @@
   </header>
   <!-- content -->
   <article class="post-content prose m-auto slide-enter-content dark:prose-invert">
-    <p>为什么说是装X的名词，因为还<br>（初次听见的时候确实被别人装到了）<br>既然如此，来了解了解吧</p>
-<h3 id="存取周期"><a href="#存取周期" class="headerlink" title="存取周期"></a>存取周期</h3><p> <strong>存取周期</strong>：可以连续读&#x2F;写的最短时间间隔</p>
-<p> 注意：DRAM芯片的恢复时间比较长，有可能是存取时间的几倍<br> eg：存取时间为r，存取周期为T，T&#x3D;4r</p>
-<p>我们知道就算是单核CPU的读取速度也要比内存快的多，并且内存读写后需要一段恢复时间。当CPU想要连续读取一些数据时，就必须等待恢复时间</p>
-<p>为了解决这个问题，于是便提出了多体并行存储器</p>
-<h2 id="多模块存储器"><a href="#多模块存储器" class="headerlink" title="多模块存储器"></a>多模块存储器</h2><p>多模块存储器是一种空间并行技术，利用多个结构完全相同的存储模块的并行工作来提高存储器的吞吐率，常有单体多字存储器和多体并行存储器</p>
-<h3 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h3><p> 多体并行存储器由多体模块构成，每个模块都有相同的容量和存取速度，各个模块都有独立的读写控制电路，地址存器和数据寄存器。它们既能并行工作，又能交叉工作</p>
-<p> 分为<strong>高位</strong>交叉编址和<strong>低位</strong>交叉编址两种</p>
-<p>CPU对内存访问时，一定需要提供内存的地址，内存地址又是几个比特位信息</p>
-<p>对于高位交叉编址：我们可以采用地址位更高的几个位来区分是哪个内存条</p>
-<p>对于低位交叉编址：我们可以采用地址位更低的几个位来区分是哪个内存条</p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><h5 id="1-对于以下内容的存储周期都假设为T，存取时间为r，假设T-4r（恢复时间为3r）"><a href="#1-对于以下内容的存储周期都假设为T，存取时间为r，假设T-4r（恢复时间为3r）" class="headerlink" title="1.对于以下内容的存储周期都假设为T，存取时间为r，假设T&#x3D;4r（恢复时间为3r）"></a>1.对于以下内容的存储周期都假设为T，存取时间为r，假设T&#x3D;4r（恢复时间为3r）</h5><h5 id="2-设都具有4个存储体，每个存储体有8个存储单元"><a href="#2-设都具有4个存储体，每个存储体有8个存储单元" class="headerlink" title="2.设都具有4个存储体，每个存储体有8个存储单元"></a>2.设都具有4个存储体，每个存储体有8个存储单元</h5><h5 id="3-都假设直接访问”00000”-“000001”-“00010”-“00011”-“00100”-4-8-32-2-5-5个比特位"><a href="#3-都假设直接访问”00000”-“000001”-“00010”-“00011”-“00100”-4-8-32-2-5-5个比特位" class="headerlink" title="3.都假设直接访问”00000” “000001” “00010” “00011” “00100” (4*8&#x3D;32&#x3D;2^5) (5个比特位)"></a>3.都假设直接访问”00000” “000001” “00010” “00011” “00100” (4*8&#x3D;32&#x3D;2^5) (5个比特位)</h5><h4 id="高位交叉编址"><a href="#高位交叉编址" class="headerlink" title="高位交叉编址"></a>高位交叉编址</h4><p> 高位地址表示体号，低位地址表示体内地址。如下图，存储器共有4个模块M0~M3，每个模块（存储体）有8个存储单元</p>
-<p><img src="/../images/GWT1.jpg"><br>在高位交叉方式下，总是把低位的体内地址送到高位体号确定的模块内进行译码。访问一个连续主存时，总是先在一个模块内访问，等到该模块访问完才会转到下一个模块访问<br>CPU总是按顺序访问存储模块，各模块不能并行访问，因此不能提高存储器的吞吐率（相当于单纯的扩容）</p>
-<p><img src="/../images/GWT2.jpg"><br>连续取5个存储字，耗时5T<br>若连续取n个存储字，耗时nT</p>
-<h4 id="低位交叉编址"><a href="#低位交叉编址" class="headerlink" title="低位交叉编址"></a>低位交叉编址</h4><p> 低位地址表示体号，高位地址表示体内地址。如下图，存储器共有4个模块M0~M3，每个模块（存储体）有8个存储单元</p>
-<p><img src="/../images/DWT1.jpg"><br>在低位交叉方式下，总是把高位的体内地址送到低位体号确定的模块内进行译码，程序连续存放在相邻模块中</p>
-<p><img src="/../images/DWT2.jpg"><br>连续取5个存储字，耗时T+4r<br>若连续取n个存储字，耗时T+(n-1)r</p>
-<h4 id="思考：为什么讨论的是”连续访存”的情况"><a href="#思考：为什么讨论的是”连续访存”的情况" class="headerlink" title="思考：为什么讨论的是”连续访存”的情况"></a>思考：为什么讨论的是”连续访存”的情况</h4><p>因为：在实际的应用中，很多数据都是连续存放的。eg：数组，程序代码的顺序执行(除非含有if等跳转语句)等</p>
-<h3 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h3><p>每个存储单元存储m个字，总线宽度也为m个字，一次并行读出m个字</p>
-<p><img src="/../images/DT.jpg"><br>但是每次只能同时取m个字，不能单独取其中某个字，指令和数据在主存中必须是连续存放的</p>
+    <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在系统中，我们经常会遇到这样的需求：将大量的对象进行排序，然后只需要取出最Top的前N名的数据，这就是一个TopN算法</p>
+<h2 id="例题引入"><a href="#例题引入" class="headerlink" title="例题引入"></a>例题引入</h2><p>假设有20人参加物理竞赛，只录取成绩优异的前10名，并将他们从高分到低分输出。而对落选的其他考生 ，不需排出名次</p>
+<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><p><strong>swap 函数</strong>：这个函数用于交换两个整数的值。它接收两个整数指针作为参数，并通过指针来交换它们的值  </p>
+<p><strong>maxHeapify 函数</strong>：这个函数用于调整堆，使其满足最大堆的性质。最大堆的性质是父节点的值大于或等于其子节点的值。函数接收一个数组、数组的长度 n 和一个索引 i，然后调整以索引 i 为根的子树，使其成为最大堆  </p>
+<p><strong>buildMaxHeap 函数</strong>：这个函数用于构建一个最大堆。它从最后一个非叶子节点开始，向前遍历数组，并对每个节点调用 maxHeapify 函数，从而确保整个数组成为一个最大堆  </p>
+<p><strong>extractTop10 函数</strong>：这个函数是代码的核心。它首先调用 buildMaxHeap 函数来构建一个最大堆。然后，它提取出堆顶元素（即最大值），并输出。接着，它将堆顶元素与最后一个元素交换，并减小堆的大小。然后再次调用 maxHeapify 函数来重新调整堆。这个过程重复10次，从而提取出成绩最高的前10名考生  </p>
+<p><strong>main 函数</strong>：这是程序的入口点。它定义了一个包含20位考生成绩的数组，并调用 extractTop10 函数来提取并输出成绩最高的前10名考生  </p>
+<h3 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调整堆，使其满足最大堆的性质</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">maxHeapify</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n, <span class="type">int</span> i)</span> &#123;  </span><br><span class="line">    <span class="type">int</span> largest = i;   <span class="comment">// 初始化最大值为根节点  </span></span><br><span class="line">    <span class="type">int</span> left = <span class="number">2</span> * i + <span class="number">1</span>;   <span class="comment">// 左子节点  </span></span><br><span class="line">    <span class="type">int</span> right = <span class="number">2</span> * i + <span class="number">2</span>;   <span class="comment">// 右子节点  </span></span><br><span class="line">    <span class="keyword">if</span> (left &lt; n &amp;&amp; arr[left] &gt; arr[largest]) &#123;  </span><br><span class="line">        largest = left;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span> (right &lt; n &amp;&amp; arr[right] &gt; arr[largest]) &#123;  </span><br><span class="line">        largest = right;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">if</span> (largest != i) &#123;  </span><br><span class="line">        swap(&amp;arr[i], &amp;arr[largest]);   </span><br><span class="line">        maxHeapify(arr, n, largest);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构建最大堆  </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">buildMaxHeap</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span> &#123;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;  </span><br><span class="line">        maxHeapify(arr, n, i);  </span><br><span class="line">    &#125;  <span class="comment">// 从最后一个非叶子节点开始调整堆</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提取前10名考生的成绩并排序  </span></span><br><span class="line"><span class="type">void</span> <span class="title function_">extractTop10</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span> &#123;  </span><br><span class="line">    <span class="comment">// 构建最大堆  </span></span><br><span class="line">    buildMaxHeap(arr, n);  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 提取前10名考生的成绩  </span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;成绩优异的前10名考生如下：\n&quot;</span>);  </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span> &amp;&amp; i &lt; n; i++) &#123;  </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d. %d\n&quot;</span>, i + <span class="number">1</span>, arr[<span class="number">0</span>]);   </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// 将最后一个元素移到堆顶，并减小堆的大小  </span></span><br><span class="line">        arr[<span class="number">0</span>] = arr[n - <span class="number">1</span>];  </span><br><span class="line">        n--;  </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// 重新调整堆  </span></span><br><span class="line">        maxHeapify(arr, n, <span class="number">0</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用函数提取前10名成绩  </span></span><br><span class="line"> extractTop10(scores, <span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><p><strong>构建最大堆 (buildMaxHeap)</strong><br>构建最大堆的时间复杂度为 O(n)，并且在构建最大堆的过程中，我们需要从最后一个非叶子节点开始（即 n&#x2F;2 - 1），对于每个节点，maxHeapify 函数的时间复杂度是 O(log n)， 由于我们从最后一个非叶子节点开始，共有 n&#x2F;2 个节点需要调整，因此总的时间复杂度是：O(log n) + O(log n) + … + O(log n) （共 n&#x2F;2 项）<br>这等于：O(log n) * (n&#x2F;2)<br>即：O(n log n)</p>
+<p><strong>提取前10个最大元素 (extractTop10)</strong><br>调用 maxHeapify 函数，每次的时间复杂度为 O(log n)。由于我们需要提取前10个元素，因此这个过程会重复10次，所以总的时间复杂度为 O(10 log n)。<br>综合以上两点，整段代码的时间复杂度为 O(n log n) + O(10 log n)，由于 10 是常数，所以最终的时间复杂度仍然是 O(n log n)</p>
+<h3 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h3><p>在刚开始的算法设计中代码中的 extractTop10 函数实际上并没有正确地实现提取前10名考生成绩的逻辑。应为改代码每次提取堆顶元素（最大值）后，并没有将其从堆中移除，而是简单地与最后一个元素交换位置，并减小堆的大小。这样做会导致已经提取过的最大值仍然留在堆中，从而影响了后续提取的结果。对于其所做出的改正是将swap(&amp;arr[0], &amp;arr[n - 1]); 改变成arr[0] &#x3D; arr[n - 1]; 在修正后的代码中，我们将 arr[n - 1]（即原来的最后一个元素）移动到堆顶 arr[0]，然后减小堆的大小 n，并重新调整堆。这样，每次循环都会移除当前的最大值，并保证剩余的堆仍然是一个最大堆。从而能够正确的提取成绩最高的前10名考生成绩</p>
+<h3 id="不足与反思"><a href="#不足与反思" class="headerlink" title="不足与反思"></a>不足与反思</h3><p>对于该代码，能够解决实验数据少量的情况，但如果实验的数据（考生人数非常多），例如10万人中取成绩最高的前10名时，该算法便不是最优。面对庞大的数据，是否可以不构造出完整的最大堆，而是构造一个始终为10的最大堆，存储的就是成绩最高的10位考生成绩，然后每次将一个数据与这个堆中的 成绩比较，来判断是否可以进入成绩最高的前10名中，从而是该堆就是成绩最高的10位考生的成绩</p>
 
   </article>
   <!-- tag -->
@@ -272,6 +271,11 @@
   <!-- prev and next -->
   <div class="flex justify-between mt-12 pt-6 border-t border-gray-200">
     <div>
+      
+        <a href="/2024/05/24/Intermemory/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
+          <iconify-icon width="20" icon="ri:arrow-left-s-line" data-inline="false"></iconify-icon>
+          一个装X名词"低位交叉编址二体存储器"
+        </a>
       
     </div>
     <div>
