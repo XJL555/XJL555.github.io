@@ -224,17 +224,17 @@
         <section class="flex items-center gap-3 text-sm">
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time>2024-05-25</time>
+            <time>2024-05-26</time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="ic:round-access-alarm" ></iconify-icon>
-            <span>2 min</span>
+            <span>5 min</span>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>774 words</span>
+            <span>1.6k words</span>
           </span>
           
         </section>
@@ -251,12 +251,23 @@
 <p>数据总线：用于在CPU与内存、CPU与I&#x2F;O设备之间传输数据，是双向传输总线，数据总线的宽度（即位数）决定了计算机一次能够传输的数据量的大小。eg：一个32位的数据总线一次可以传输4个字节（32位&#x2F;8位 &#x3D; 4字节）的数据，若并行32bit数据，则包含了32根信号线  </p>
 <p>地址总线：用于指定数据在内存中的地址，以及指定I&#x2F;O设备的地址，是单向传输总线，地址总线的宽度决定了计算机能够访问的最大内存容量。eg：一个32位的地址总线可以访问最多4GB（2^32字节）的内存空间  </p>
 <p>控制总线：用于传输控制信号，包括CPU对内存和I&#x2F;O设备的读写控制信号、中断信号、时钟信号等。控制总线上的信号决定了各个部件的工作状态</p>
+<p><img src="/../images/Xtzx.png"><br><img src="/../images/Xtzx2.PNG"></p>
 <p>注意区分数据总线和数据通路<br>数据通路：数据流经的路径<br>数据总线：数据传输的媒介  </p>
 <p><strong>I&#x2F;O总线</strong>：主要用于连接低速的I&#x2F;O设备，通过I&#x2F;O接口与系统总线相连接，目的是将低速设备和高速总线分离，常见：USB、PCI</p>
 <p><strong>通信总线</strong>：计算机系统之间或者计算机系统与其他系统间传输信息的总线，也称外部总线  </p>
-<h4 id="按时序控制分"><a href="#按时序控制分" class="headerlink" title="按时序控制分"></a>按时序控制分</h4><p><strong>同步总线</strong>：<br><strong>异步总线</strong>：  </p>
-<h4 id="按数据传输方式分"><a href="#按数据传输方式分" class="headerlink" title="按数据传输方式分"></a>按数据传输方式分</h4><p><strong>串行总线</strong>：<br><strong>并行总线</strong>：  </p>
-<h3 id="系统总线的结构"><a href="#系统总线的结构" class="headerlink" title="系统总线的结构"></a>系统总线的结构</h3><h4 id="单总线结构"><a href="#单总线结构" class="headerlink" title="单总线结构"></a>单总线结构</h4><h4 id="双总线结构"><a href="#双总线结构" class="headerlink" title="双总线结构"></a>双总线结构</h4><h4 id="三总线结构"><a href="#三总线结构" class="headerlink" title="三总线结构"></a>三总线结构</h4><h4 id="四总线结构"><a href="#四总线结构" class="headerlink" title="四总线结构"></a>四总线结构</h4><h3 id="总线的性能指标"><a href="#总线的性能指标" class="headerlink" title="总线的性能指标"></a>总线的性能指标</h3>
+<h4 id="按时序控制分"><a href="#按时序控制分" class="headerlink" title="按时序控制分"></a>按时序控制分</h4><p><strong>同步总线</strong>：总线上连接的部件或设备通过统一的时钟进行同步，在规定的时钟节拍内进行规定的总线操作，来完成部件或设备之间的信息传输  </p>
+<p><strong>异步总线</strong>：总线上连接的部件或设备没有统一的时钟，而以信号握手的方式来协调各部件或设备之间的信息传输，总线操作时序不是固定的  </p>
+<h4 id="按数据传输方式分"><a href="#按数据传输方式分" class="headerlink" title="按数据传输方式分"></a>按数据传输方式分</h4><p><strong>串行总线</strong>：只有一条双向传输或两条单向传输的数据线(eg：USB)，每次只传1bit，效率低于并行总线，成本低，抗干扰能力强，适合长距离通信<br><strong>并行总线</strong>：有多条双向传输的数据线，可以实现多比特位的同时传输，效率高于串行总线，适合近距离传输  </p>
+<p>注意：并行总线不一定比串行总线快，并行总线需要考虑数据协同性，和线路间的相互干扰，导致工作频率无法持续提高。串行总线可以通过不断提高工作频率来提高传输速度，使其速度最终超过并行总线的速度</p>
+<h3 id="系统总线的结构"><a href="#系统总线的结构" class="headerlink" title="系统总线的结构"></a>系统总线的结构</h3><h4 id="单总线结构"><a href="#单总线结构" class="headerlink" title="单总线结构"></a>单总线结构</h4><p>单总线结构将CPU、主存、I&#x2F;O设备都挂在一组总线上，允许I&#x2F;O设备之间、I&#x2F;O设备与主存间直接交换信息，CPU与主存、CPU与外设间都能通过总线直接进行信息交换，无须中间设备干扰<br>注意：单总线不是指只有一根信号线</p>
+<p><img src="/../images/Dzx.PNG"><br>CPU、主存：快速传输设备，设备接口：慢速传输设备，接在同一根总线上会造成性能浪费<br>优点：结构简单，成本低，容易接入新设备<br>缺点：带宽低，负载重，多个部件只能使用唯一的总线，不支持并发传输操作</p>
+<h4 id="双总线结构"><a href="#双总线结构" class="headerlink" title="双总线结构"></a>双总线结构</h4><p>双总线结构有两条总线，一条是主存总线，用于在CPU、主存和通道间传输数据。一条是I&#x2F;O总线，用于多个设备和通道间传输数据。支持突发性传输，送出一个地址，收到多个地址连续的数据<br>通道：处理信息快，适配CPU速度，小CPU，管理I&#x2F;O设备  </p>
+<p><img src="/../images/Szx.PNG"><br>优点：将低速I&#x2F;O设备分离出来，实现存储总线和I&#x2F;O总线分离<br>缺点：需要增加通道等硬件设备</p>
+<h4 id="三总线结构"><a href="#三总线结构" class="headerlink" title="三总线结构"></a>三总线结构</h4><p>三总线结构是计算机系统各部件间采用3条独立的总线来构成信息通路，分别为主存总线、I&#x2F;O总线和直接内存访问(DMA)总线<br>DMA总线：处理速度快，可接受高速外设（eg：磁盘机等），I&#x2F;O总线：处理速度慢，连接低速I&#x2F;O设备  </p>
+<p><img src="/../images/Snzx.PNG"><br>优点：提高I&#x2F;O设备性能，使其更快响应命令，提高系统吞吐量<br>缺点：任意时刻只能使用一种总线，系统工作效率低</p>
+<h4 id="四总线结构"><a href="#四总线结构" class="headerlink" title="四总线结构"></a>四总线结构</h4><p>四总线结构是当代计算机常用的<br>桥接器：用于连接不同的总线，具有数据缓冲、转换和控制功能<br>靠近CPU的总线处理速度更快  </p>
+<p><img src="/../images/Sizx.PNG"></p>
+<h3 id="总线的性能指标"><a href="#总线的性能指标" class="headerlink" title="总线的性能指标"></a>总线的性能指标</h3>
   </article>
   <!-- tag -->
   <div class="mt-12 pt-6 border-t border-gray-200">
