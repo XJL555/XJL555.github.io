@@ -15,7 +15,7 @@
 
 
 
-<title>cqq_bool | 麻辣芝麻牛肉</title>
+<title>sequence_interposition | 麻辣芝麻牛肉</title>
 
 
 
@@ -154,7 +154,7 @@
         </h2>
       </a>
       <div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-        cqq_bool
+        sequence_interposition
       </div>
       <div class="flex-1"></div>
       <div class="flex items-center gap-3">
@@ -218,13 +218,13 @@
   <header class="overflow-hidden pt-6 pb-6 md:pt-12">
     <div class="pt-4 md:pt-6">
       <h1 id="article-title" class="text-[2rem] font-bold leading-snug mb-4 md:mb-6 md:text-[2.6rem]">
-        cqq_bool
+        sequence_interposition
       </h1>
       <div>
         <section class="flex items-center gap-3 text-sm">
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time>2024-07-30</time>
+            <time>2024-07-31</time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
@@ -234,7 +234,7 @@
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>40 words</span>
+            <span>254 words</span>
           </span>
           
         </section>
@@ -243,8 +243,7 @@
   </header>
   <!-- content -->
   <article class="post-content prose m-auto slide-enter-content dark:prose-invert">
-    <h2 id="C-的布尔类型"><a href="#C-的布尔类型" class="headerlink" title="C++的布尔类型"></a>C++的布尔类型</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">bool</span> a=<span class="literal">true</span>;</span><br><span class="line">    <span class="type">bool</span> b=<span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%d,b=%d\n&quot;</span>,a,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>a&#x3D;1,b&#x3D;0</p>
+    <h2 id="顺序表的插入"><a href="#顺序表的插入" class="headerlink" title="顺序表的插入"></a>顺序表的插入</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize 50<span class="comment">//定义最大数组常量</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">    ElemType data[Maxsize];</span><br><span class="line">    <span class="type">int</span> length;</span><br><span class="line">&#125;sq_list;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">list_insert</span><span class="params">(sq_list &amp;L,<span class="type">int</span> i,ElemType j)</span><span class="comment">//完成顺序表的插入（对于的顺序表，插入第几个位置，插入的数据）</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="number">1</span>&lt;=i &amp;&amp; i&lt;=L.length+<span class="number">1</span>)<span class="comment">//插入位置满足顺序表长度要求</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(L.length&lt;Maxsize)<span class="comment">//顺序表长度小于最大数组长度</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k=L.length;k&gt;=i;k--)</span><br><span class="line">            &#123;</span><br><span class="line">                L.data[k]=L.data[k<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            L.data[i<span class="number">-1</span>]=j;<span class="comment">//把数据插入需要的位置</span></span><br><span class="line">            L.length++;<span class="comment">//顺序表长度加一</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Print_list</span><span class="params">(sq_list L)</span><span class="comment">//打印顺序表</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;L.length;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%4d&quot;</span>,L.data[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sq_list L;</span><br><span class="line">    L.data[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    L.data[<span class="number">1</span>]=<span class="number">2</span>;</span><br><span class="line">    L.data[<span class="number">2</span>]=<span class="number">3</span>;</span><br><span class="line">    L.length=<span class="number">3</span>;</span><br><span class="line">    <span class="type">bool</span> ret;</span><br><span class="line">    ret =<span class="built_in">list_insert</span>(L,<span class="number">2</span>,<span class="number">60</span>);</span><br><span class="line">    <span class="keyword">if</span>(ret)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;yes\n&quot;</span>);</span><br><span class="line">        <span class="built_in">Print_list</span>(L);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </article>
   <!-- tag -->
@@ -252,7 +251,7 @@
     
       
         <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 m-1 text-sm rounded-md transition-colors hover:bg-gray-200">
-          <a href="/tags/C/">C++</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
         </span>
       
     
@@ -261,16 +260,11 @@
   <div class="flex justify-between mt-12 pt-6 border-t border-gray-200">
     <div>
       
-        <a href="/2024/07/31/sequence-interposition/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
-          <iconify-icon width="20" icon="ri:arrow-left-s-line" data-inline="false"></iconify-icon>
-          sequence_interposition
-        </a>
-      
     </div>
     <div>
       
-        <a href="/2024/07/30/cqq-quote/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
-          cqq_quote
+        <a href="/2024/07/30/cqq-bool/" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
+          cqq_bool
           <iconify-icon width="20" icon="ri:arrow-right-s-line" data-inline="false"></iconify-icon>
         </a>
       
