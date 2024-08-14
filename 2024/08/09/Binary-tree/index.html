@@ -224,7 +224,7 @@
         <section class="flex items-center gap-3 text-sm">
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time>2024-08-09</time>
+            <time>2024-08-14</time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
@@ -234,7 +234,7 @@
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>469 words</span>
+            <span>580 words</span>
           </span>
           
         </section>
@@ -254,6 +254,8 @@
 <h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>（左-右-中）</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">post_order_traversal</span><span class="params">(tree Tree)</span><span class="comment">//后序遍历（左-右-中）</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Tree!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">post_order_traversal</span>(Tree-&gt;left_child);</span><br><span class="line">        <span class="built_in">post_order_traversal</span>(Tree-&gt;right_child);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,Tree-&gt;data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h3><p>层序遍历，广度优先遍历  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">sequence_traversal</span><span class="params">(tree T)</span><span class="comment">//层次遍历，层序遍历，广度优先遍历</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkQueue Q;<span class="comment">//辅助队列</span></span><br><span class="line">    <span class="built_in">InitQueue</span>(Q);<span class="comment">//初始化队列</span></span><br><span class="line">    tree p;</span><br><span class="line">    <span class="built_in">EnQueue</span>(Q,T);<span class="comment">//树根入队</span></span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">IsEmpty</span>(Q))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">DeQueue</span>(Q,p);<span class="comment">//出队当前结点并打印</span></span><br><span class="line">        <span class="built_in">putchar</span>(p-&gt;data);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;left_child!=<span class="literal">NULL</span>)<span class="comment">//入队左孩子</span></span><br><span class="line">        &#123; <span class="built_in">EnQueue</span>(Q,p-&gt;left_child);&#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;right_child!=<span class="literal">NULL</span>)<span class="comment">//入队右孩子</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">EnQueue</span>(Q,p-&gt;right_child);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </article>
   <!-- tag -->
   <div class="mt-12 pt-6 border-t border-gray-200">
